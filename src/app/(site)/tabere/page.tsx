@@ -51,8 +51,8 @@ export default function TripsPage() {
 
           <Reveal direction="left" delay={0.1}>
             <Image
-              src="/images/trips/hero-v2.jpg"
-              alt="Copii cu ghiozdane într-o excursie educațională, pe o potecă spre munte"
+              src="/images/trips/hero.jpg"
+              alt="Priveliște de pe deal, cu sate risipite și pășuni verzi, dintr-o tabără la munte"
               width={1400}
               height={840}
               priority

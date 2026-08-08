@@ -272,25 +272,25 @@ export const thematicTrips: CategoryItem[] = [
     slug: "istorie-si-traditii",
     title: "Istorie și tradiții",
     icon: Landmark,
-    image: "/images/trips/istorie-v2.jpg",
+    image: "/images/trips/istorie.jpg",
   },
   {
     slug: "stiinta-si-tehnologie",
     title: "Știință & tehnologie",
     icon: Rocket,
-    image: "/images/trips/stiinta-v2.jpg",
+    image: "/images/trips/stiinta.jpg",
   },
   {
     slug: "natura-si-ecologie",
     title: "Natură & ecologie",
     icon: Leaf,
-    image: "/images/trips/natura-v2.jpg",
+    image: "/images/trips/natura.jpg",
   },
   {
     slug: "cultura-si-arta",
     title: "Cultură & artă",
     icon: Palette,
-    image: "/images/trips/cultura-v2.jpg",
+    image: "/images/trips/cultura.jpg",
   },
 ];
 
@@ -299,25 +299,25 @@ export const educationalCamps: CategoryItem[] = [
     slug: "tabere-in-natura",
     title: "Tabere în natură",
     icon: Trees,
-    image: "/images/trips/tabara-natura-v2.jpg",
+    image: "/images/trips/tabara-natura.jpg",
   },
   {
     slug: "tabere-de-dezvoltare-personala",
     title: "Tabere de dezvoltare personală",
     icon: Users,
-    image: "/images/trips/tabara-dezvoltare-v2.jpg",
+    image: "/images/trips/tabara-dezvoltare.jpg",
   },
   {
     slug: "tabere-creative",
     title: "Tabere creative",
     icon: Brush,
-    image: "/images/trips/tabara-creativa-v2.jpg",
+    image: "/images/trips/tabara-creativa.jpg",
   },
   {
     slug: "tabere-de-limba",
     title: "Tabere de limbă",
     icon: MessagesSquare,
-    image: "/images/trips/tabara-limba-v2.jpg",
+    image: "/images/trips/tabara-limba.jpg",
   },
 ];
 

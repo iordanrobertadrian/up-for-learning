@@ -57,7 +57,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ro" className={cn(nunito.variable, fraunces.variable)}>
-      <body className="min-h-dvh bg-cream font-sans text-ink">
+      {/* Extensiile de browser injectează atribute pe <body> înainte să pornească
+          React (ex. cz-shortcut-listen de la ColorZilla), ceea ce produce un
+          hydration warning fals în dev. */}
+      <body
+        className="min-h-dvh bg-cream font-sans text-ink"
+        suppressHydrationWarning
+      >
         <JsonLd data={organizationSchema()} />
         <JsonLd data={websiteSchema()} />
         <ToastProvider>{children}</ToastProvider>

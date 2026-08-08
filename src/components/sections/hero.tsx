@@ -9,7 +9,7 @@ import { comingSoon, heroCopy } from "@/constants/content";
 export function Hero() {
   return (
     <section className="overflow-hidden bg-[#faf5ef] pb-16 pt-12 sm:pb-20 sm:pt-16 lg:pb-24">
-      <div className="mx-auto grid w-full max-w-[1320px] items-center gap-10 px-5 sm:px-6 lg:grid-cols-2 lg:gap-8 lg:px-8">
+      <div className="mx-auto grid w-full max-w-[1320px] items-center gap-10 px-5 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8">
         <div className="max-w-xl">
           <Reveal direction="up" eager>
             <p className="mb-5 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-2xl bg-gold-100 px-4 py-2.5 text-sm text-gold-800 ring-1 ring-gold-200 sm:inline-flex">
