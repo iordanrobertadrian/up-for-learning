@@ -1,4 +1,5 @@
 import {
+  Backpack,
   BarChart3,
   BookOpen,
   Brush,
@@ -38,6 +39,13 @@ const coursePrice: CoursePrice = {
   currency: "RON",
   unit: "oră",
   note: "2 ore/sesiune",
+};
+
+const clubPrice: CoursePrice = {
+  amount: 2000,
+  currency: "RON",
+  unit: "lună",
+  note: "2 ore/zi",
 };
 
 export const comingSoon = {
@@ -142,6 +150,25 @@ export const programsIntro = {
     "Programe educaționale structurate, construite pentru progres, rigoare și rezultate vizibile.",
 } as const;
 
+export const enrollmentPromo = {
+  badge: "Înscrieri deschise",
+  title: "Am deschis înscrierile!",
+  subtitle: "Rezervă un loc și beneficiază de reducerile noastre:",
+  discounts: [
+    {
+      value: "5%",
+      description: "reducere dacă alegi două programe Up for Learning",
+    },
+    {
+      value: "10%",
+      description:
+        "reducere la plata integrală a cursului pentru tot anul academic",
+    },
+  ],
+  note: "Reducerile se cumulează.",
+  cta: "Rezervă un loc",
+} as const;
+
 export const courses: Course[] = [
   {
     slug: "limba-romana",
@@ -165,6 +192,18 @@ export const courses: Course[] = [
       "Calcul, reprezentări, exerciții gradate și strategii de rezolvare.",
     grades: "Clasele I – VIII",
     price: coursePrice,
+    accent: "gold",
+  },
+  {
+    slug: "clubul-de-dupa-ore",
+    name: "Clubul de după ore",
+    icon: Backpack,
+    image: "/images/courses/club-dupa-ore.jpg",
+    tags: "Teme · Pregătire suplimentară · Cluburi de lectură",
+    description:
+      "Sprijin la teme, recapitulări și lectură, într-un cadru organizat, după programul de școală.",
+    grades: "Clasele I – VIII",
+    price: clubPrice,
     accent: "gold",
   },
   {
@@ -327,6 +366,7 @@ export const tripsClosing =
 export const courseOptions: string[] = [
   "Limba română",
   "Matematică",
+  "Clubul de după ore",
   "Limba engleză",
   "Evaluări Naționale",
   "Ateliere de dezvoltare",
