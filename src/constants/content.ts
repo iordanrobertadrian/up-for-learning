@@ -202,7 +202,7 @@ export const courses: Course[] = [
     tags: "Teme · Pregătire suplimentară · Cluburi de lectură",
     description:
       "Sprijin la teme, recapitulări și lectură, într-un cadru organizat, după programul de școală.",
-    grades: "Clasele I – VIII",
+    grades: "Clasele P – IV",
     price: clubPrice,
     accent: "gold",
   },
@@ -214,7 +214,7 @@ export const courses: Course[] = [
     tags: "Comunicare · Gramatică · Examene Cambridge",
     description:
       "Exprimare orală și scrisă, vocabular activ, gramatică aplicată și pregătire pentru examenele Cambridge.",
-    grades: "Clasele I – VIII",
+    grades: "Clasele P – VIII",
     price: coursePrice,
     accent: "brand",
   },
