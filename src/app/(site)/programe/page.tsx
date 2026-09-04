@@ -1,4 +1,4 @@
-import { CalendarCheck } from "lucide-react";
+import { CalendarCheck, PartyPopper, Plus } from "lucide-react";
 import type { Metadata } from "next";
 
 import { CourseCard } from "@/components/cards/course-card";
@@ -16,6 +16,7 @@ import { Blob, DotGrid } from "@/components/ui/decorations";
 import { ROUTES } from "@/constants/navigation";
 import {
   courses,
+  enrollmentPromo,
   programFeatures,
   programHighlights,
   programsClosing,
@@ -27,7 +28,7 @@ export const metadata: Metadata = buildMetadata({
   title: "Programe și ateliere",
   path: ROUTES.programs,
   description:
-    "Meditații și cursuri în Voluntari, Ilfov: Limba română, Matematică, Limba engleză cu pregătire Cambridge, Limba germană și Limba franceză (clasele P – XII), Evaluări Naționale, simulări cu feedback individual, ateliere de dezvoltare și Clubul de după ore.",
+    "Înscrieri deschise în Voluntari, Ilfov: Limba română, Matematică, Clubul de după ore, Limba engleză cu pregătire Cambridge, Limba germană și Limba franceză (clasele P – XII), Evaluări Naționale, simulări cu feedback individual și ateliere de dezvoltare.",
 });
 
 export default function ProgramsPage() {
@@ -69,7 +70,57 @@ export default function ProgramsPage() {
       </section>
 
       <Section tone="cream" size="wide" className="pt-14">
-        <StaggerGroup className="grid gap-7 md:grid-cols-3">
+        <Reveal className="relative mb-12 overflow-hidden rounded-3xl bg-brand-700 p-8 shadow-lift sm:p-10">
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-gold-400/15 blur-3xl"
+          />
+          <div className="relative grid gap-9 lg:grid-cols-2 lg:items-center lg:gap-12">
+            <div>
+              <Badge tone="gold">
+                <PartyPopper className="h-3.5 w-3.5" aria-hidden="true" />
+                {enrollmentPromo.badge}
+              </Badge>
+              <h2 className="mt-4 font-display text-3xl font-bold uppercase leading-tight tracking-tight text-cream sm:text-4xl">
+                {enrollmentPromo.title}
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-cream/85 sm:text-lg">
+                {enrollmentPromo.subtitle}
+              </p>
+              <Button
+                href={ROUTES.enroll}
+                variant="gold"
+                size="lg"
+                className="mt-7"
+              >
+                <CalendarCheck className="h-5 w-5" aria-hidden="true" />
+                {enrollmentPromo.cta}
+              </Button>
+            </div>
+
+            <ul className="space-y-4">
+              {enrollmentPromo.discounts.map((discount) => (
+                <li
+                  key={discount.value}
+                  className="flex items-center gap-5 rounded-2xl bg-white/[0.07] p-5 ring-1 ring-white/15"
+                >
+                  <span className="font-display text-3xl font-bold text-gold-300 sm:text-4xl">
+                    {discount.value}
+                  </span>
+                  <span className="text-sm leading-relaxed text-cream/90 sm:text-base">
+                    {discount.description}
+                  </span>
+                </li>
+              ))}
+              <li className="flex items-center gap-2 pl-1 text-sm font-semibold text-gold-200">
+                <Plus className="h-4 w-4" aria-hidden="true" />
+                {enrollmentPromo.note}
+              </li>
+            </ul>
+          </div>
+        </Reveal>
+
+        <StaggerGroup className="grid gap-7 sm:grid-cols-2 xl:grid-cols-4">
           {courses.map((course) => (
             <StaggerItem key={course.slug} className="h-full">
               <CourseCard course={course} />

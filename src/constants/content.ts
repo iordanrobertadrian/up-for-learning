@@ -45,6 +45,13 @@ const coursePrice: CoursePrice = {
   note: "2 ore/sesiune",
 };
 
+const clubPrice: CoursePrice = {
+  amount: 100,
+  currency: "RON",
+  unit: "zi",
+  note: "2 ore/zi",
+};
+
 export const comingSoon = {
   label: "Coming soon",
   text: "Ne deschidem porțile în curând, în Voluntari. Înscrierile sunt deja deschise.",
@@ -147,6 +154,25 @@ export const programsIntro = {
     "Programe educaționale structurate, construite pentru progres, rigoare și rezultate vizibile.",
 } as const;
 
+export const enrollmentPromo = {
+  badge: "Înscrieri deschise",
+  title: "Am deschis înscrierile!",
+  subtitle: "Rezervă un loc și beneficiază de reducerile noastre:",
+  discounts: [
+    {
+      value: "5%",
+      description: "reducere dacă alegi două programe Up for Learning",
+    },
+    {
+      value: "10%",
+      description:
+        "reducere la plata integrală a cursului pentru tot anul academic",
+    },
+  ],
+  note: "Reducerile se cumulează.",
+  cta: "Rezervă un loc",
+} as const;
+
 export const courses: Course[] = [
   {
     slug: "limba-romana",
@@ -173,6 +199,18 @@ export const courses: Course[] = [
     accent: "gold",
   },
   {
+    slug: "clubul-de-dupa-ore",
+    name: "Clubul de după ore",
+    icon: Backpack,
+    image: "/images/courses/club-dupa-ore.jpg",
+    tags: "Teme · Pregătire suplimentară · Cluburi de lectură",
+    description:
+      "Sprijin la teme, recapitulări și lectură, într-un cadru organizat, după programul de școală.",
+    grades: "Clasele P – IV",
+    price: clubPrice,
+    accent: "gold",
+  },
+  {
     slug: "limba-engleza",
     name: "Limba engleză",
     icon: MessagesSquare,
@@ -180,7 +218,7 @@ export const courses: Course[] = [
     tags: "Comunicare · Gramatică · Examene Cambridge",
     description:
       "Exprimare orală și scrisă, vocabular activ, gramatică aplicată și pregătire pentru examenele Cambridge.",
-    grades: "Clasele I – VIII",
+    grades: "Clasele P – VIII",
     price: coursePrice,
     accent: "brand",
   },
@@ -242,17 +280,6 @@ export const programHighlights: ProgramHighlight[] = [
     badge: "Ateliere complementare",
     icon: Sprout,
     accent: "brand",
-  },
-  {
-    slug: "clubul-de-dupa-ore",
-    title: "Clubul de după ore",
-    tags: "Teme supravegheate · Ateliere · Timp de joacă",
-    description:
-      "După orele de la școală, copiii rămân într-un spațiu sigur și liniștit, unde își fac temele cu sprijinul profesorilor, apoi au timp pentru ateliere, lectură și joacă.",
-    badge: "Program zilnic",
-    icon: Backpack,
-    accent: "gold",
-    price: "100 lei/zi",
   },
 ];
 
@@ -453,13 +480,13 @@ export const tripsClosing =
 export const courseOptions: string[] = [
   "Limba română",
   "Matematică",
+  "Clubul de după ore",
   "Limba engleză",
   "Limba germană",
   "Limba franceză",
   "Evaluări Naționale",
   "Simulări Evaluări Naționale",
   "Ateliere de dezvoltare",
-  "Clubul de după ore",
   "Excursii tematice și tabere",
   "Nu sunt sigur/ă încă",
 ];

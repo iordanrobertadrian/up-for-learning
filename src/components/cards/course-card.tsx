@@ -13,7 +13,7 @@ export function CourseCard({ course }: { course: Course }) {
             src={course.image}
             alt={`Curs ${course.name} la Up for Learning`}
             fill
-            sizes="(max-width: 768px) 100vw, 420px"
+            sizes="(max-width: 640px) 100vw, (max-width: 1280px) 45vw, 320px"
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>
