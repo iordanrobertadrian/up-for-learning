@@ -72,6 +72,18 @@ export interface ProgramHighlight {
   badge: string;
   icon: LucideIcon;
   accent: "brand" | "gold";
+  /** Clasele acoperite, afișate ca pastilă sub descriere. */
+  grades?: string;
+  /** Tarif deja formatat („80 lei/oră”) — unitățile diferă de la program la program. */
+  price?: string;
+}
+
+export interface TeamMember {
+  slug: string;
+  name: string;
+  role: string;
+  image: string;
+  description: string;
 }
 
 export interface CategoryItem {

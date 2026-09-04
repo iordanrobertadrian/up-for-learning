@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# source photos (originale de la client, procesate în public/images)
+/poze-homepage
+/poze-echipa

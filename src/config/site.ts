@@ -69,7 +69,9 @@ export const siteConfig = {
   },
 
   social: {
-    facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL ?? "",
+    facebook:
+      process.env.NEXT_PUBLIC_FACEBOOK_URL ??
+      "https://www.facebook.com/share/1F3siEJTBu/",
     instagram:
       process.env.NEXT_PUBLIC_INSTAGRAM_URL ??
       "https://www.instagram.com/up_for_learning",

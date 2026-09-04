@@ -2,19 +2,20 @@ import { Star } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 
+import { TeamCard } from "@/components/cards/team-card";
 import { ValueCard } from "@/components/cards/value-card";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion/reveal";
 import { JsonLd, breadcrumbSchema } from "@/components/seo/json-ld";
-import { Section } from "@/components/ui/section";
+import { Section, SectionHeader } from "@/components/ui/section";
 import { ROUTES } from "@/constants/navigation";
-import { aboutIntro, values } from "@/constants/content";
+import { aboutIntro, team, teamIntro, values } from "@/constants/content";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   title: "Despre noi",
   path: ROUTES.about,
   description:
-    "Centru educațional în Voluntari, Ilfov. La Up for Learning punem accent pe strategiile de lucru: elevii învață să analizeze o cerință, să argumenteze și să verifice, în grupe restrânse.",
+    "Centru educațional în Voluntari, Ilfov. La Up for Learning punem accent pe strategiile de lucru: elevii învață să analizeze o cerință, să argumenteze și să verifice, în grupe restrânse. Cunoaște echipa de profesori.",
 });
 
 export default function AboutPage() {
@@ -73,6 +74,24 @@ export default function AboutPage() {
           {values.map((value) => (
             <StaggerItem key={value.title} className="h-full">
               <ValueCard value={value} />
+            </StaggerItem>
+          ))}
+        </StaggerGroup>
+      </Section>
+
+      <Section id="echipa" tone="white" size="wide">
+        <Reveal>
+          <SectionHeader
+            eyebrow={teamIntro.eyebrow}
+            title={teamIntro.title}
+            description={teamIntro.description}
+          />
+        </Reveal>
+
+        <StaggerGroup className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {team.map((member) => (
+            <StaggerItem key={member.slug} className="h-full">
+              <TeamCard member={member} />
             </StaggerItem>
           ))}
         </StaggerGroup>

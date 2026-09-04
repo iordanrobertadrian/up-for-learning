@@ -1,13 +1,17 @@
 import {
+  Backpack,
   BarChart3,
   BookOpen,
   Brush,
   Calculator,
   ClipboardCheck,
   ClipboardList,
+  FileCheck,
+  Globe,
   GraduationCap,
   Heart,
   Landmark,
+  Languages,
   Leaf,
   Lightbulb,
   MessagesSquare,
@@ -30,6 +34,7 @@ import type {
   GalleryImage,
   ProcessStep,
   ProgramHighlight,
+  TeamMember,
   ValueItem,
 } from "@/types";
 
@@ -183,6 +188,30 @@ export const courses: Course[] = [
 
 export const programHighlights: ProgramHighlight[] = [
   {
+    slug: "limba-germana",
+    title: "Limba germană",
+    tags: "Vocabular · Gramatică · Conversație",
+    description:
+      "De la primele cuvinte până la exprimarea nuanțată: structură clară, pronunție corectă și încredere în comunicare.",
+    badge: "Curs de limbă",
+    icon: Languages,
+    accent: "brand",
+    grades: "Clasele P – XII",
+    price: "80 lei/oră",
+  },
+  {
+    slug: "limba-franceza",
+    title: "Limba franceză",
+    tags: "Vocabular · Gramatică · Conversație",
+    description:
+      "Exprimare orală și scrisă, gramatică aplicată și deschidere către cultura francofonă, pas cu pas, la orice nivel.",
+    badge: "Curs de limbă",
+    icon: Globe,
+    accent: "gold",
+    grades: "Clasele P – XII",
+    price: "80 lei/oră",
+  },
+  {
     slug: "evaluari-nationale",
     title: "Evaluări Naționale",
     tags: "Clasele II · IV · VI · VIII",
@@ -193,6 +222,18 @@ export const programHighlights: ProgramHighlight[] = [
     accent: "brand",
   },
   {
+    slug: "simulari-evaluari-nationale",
+    title: "Simulări Evaluări Naționale",
+    tags: "Condiții de examen · Corectare pe barem",
+    description:
+      "Simulare completă, corectată după barem, urmată de feedback individual pentru fiecare părinte: unde stă copilul acum și ce urmează de lucrat.",
+    badge: "Feedback individual",
+    icon: FileCheck,
+    accent: "gold",
+    grades: "Clasele II · IV · VI · VIII",
+    price: "120 lei/simulare",
+  },
+  {
     slug: "ateliere-de-dezvoltare",
     title: "Ateliere de dezvoltare",
     tags: "Lectură · Caligrafie · Scriere creativă",
@@ -200,7 +241,18 @@ export const programHighlights: ProgramHighlight[] = [
       "Atenție, concentrare în exprimare, finețe grafică și creativitate.",
     badge: "Ateliere complementare",
     icon: Sprout,
+    accent: "brand",
+  },
+  {
+    slug: "clubul-de-dupa-ore",
+    title: "Clubul de după ore",
+    tags: "Teme supravegheate · Ateliere · Timp de joacă",
+    description:
+      "După orele de la școală, copiii rămân într-un spațiu sigur și liniștit, unde își fac temele cu sprijinul profesorilor, apoi au timp pentru ateliere, lectură și joacă.",
+    badge: "Program zilnic",
+    icon: Backpack,
     accent: "gold",
+    price: "100 lei/zi",
   },
 ];
 
@@ -258,6 +310,80 @@ export const values: ValueItem[] = [
     title: "Încredere",
     description: "Copiii devin mai siguri, mai autonomi și mai implicați.",
     accent: "brand",
+  },
+];
+
+export const teamIntro = {
+  eyebrow: "Echipa noastră",
+  title: "Profesorii care stau lângă fiecare elev",
+  description:
+    "Oameni cu experiență la catedră, care explică pe înțeles, au răbdare și știu să transforme o oră de curs într-un motiv de curiozitate.",
+} as const;
+
+export const team: TeamMember[] = [
+  {
+    slug: "mihaela-mitrut",
+    name: "Mihaela Mitruț",
+    role: "Profesor învățământ primar · 23 de ani de experiență",
+    image: "/images/team/mihaela-mitrut.jpg",
+    description:
+      "Douăzeci și trei de ani la catedră au învățat-o că fiecare copil pornește din alt punct și ajunge departe în ritmul lui. Crede într-o educație centrată pe copil, în care răbdarea, încurajarea și încrederea îl ajută să își descopere și să își valorifice propriul potențial.",
+  },
+  {
+    slug: "andreea-fundeanu",
+    name: "Andreea Fundeanu",
+    role: "Profesor de limba engleză · 10 ani de experiență",
+    image: "/images/team/andreea-fundeanu.jpg",
+    description:
+      "Îmbină cu succes metodele tradiționale și pe cele moderne, pune accent pe gândirea critică și stimulează curiozitatea, astfel încât engleza să fie învățată eficient și folosită cu naturalețe.",
+  },
+  {
+    slug: "alexandra-tudor",
+    name: "Alexandra Tudor",
+    role: "Profesor de limba și literatura română",
+    image: "/images/team/alexandra-tudor.jpg",
+    description:
+      "Pregătește elevi de gimnaziu și de liceu, cu metode interactive și activități adaptate la ritmul, nivelul și nevoile fiecăruia. Textul devine, la ea la oră, un teren de explorat, nu o lecție de memorat.",
+  },
+  {
+    slug: "ashley-justice",
+    name: "Ashley Justice",
+    role: "Profesor de limba engleză · vorbitor nativ",
+    image: "/images/team/ashley-justice.jpg",
+    description:
+      "Profesor de origine americană, organizează activități și ateliere în limba engleză. Este profesorul creativ care creează contexte naturale de învățare, în care jocul, conversația și interacțiunea îi ajută pe copii să folosească engleza cu încredere.",
+  },
+  {
+    slug: "lucia-ghita",
+    name: "Lucia Ghiță",
+    role: "Profesor de matematică",
+    image: "/images/team/lucia-ghita.jpg",
+    description:
+      "Pregătește elevi de gimnaziu și de liceu, îmbinând rigoarea matematicii cu explicații clare și adaptate. Încurajează fiecare elev să gândească logic și să aibă încredere în propriile soluții.",
+  },
+  {
+    slug: "aneliz-craciun",
+    name: "Aneliz Crăciun",
+    role: "Profesor de limba și literatura română",
+    image: "/images/team/aneliz-craciun.jpg",
+    description:
+      "Pregătește elevi de gimnaziu și de liceu, organizează simulări pentru Evaluarea Națională și oferă feedback individual părinților, ca fiecare familie să știe exact unde se află copilul și ce urmează.",
+  },
+  {
+    slug: "stefania-petcu",
+    name: "Ștefania Petcu",
+    role: "Profesor de limba germană",
+    image: "/images/team/stefania-petcu.jpg",
+    description:
+      "Cultivă prin limba germană rigoarea exprimării, încrederea în comunicare și deschiderea către o nouă cultură — o limbă învățată temeinic, pas cu pas, fără grabă și fără teamă de greșeală.",
+  },
+  {
+    slug: "oana-eremia",
+    name: "Oana Eremia",
+    role: "Profesor de limba franceză",
+    image: "/images/team/oana-eremia.jpg",
+    description:
+      "Îmbină frumusețea limbii franceze cu rigoarea exprimării, cultivând naturalețea în comunicare și curiozitatea pentru cultura francofonă.",
   },
 ];
 
@@ -328,8 +454,12 @@ export const courseOptions: string[] = [
   "Limba română",
   "Matematică",
   "Limba engleză",
+  "Limba germană",
+  "Limba franceză",
   "Evaluări Naționale",
+  "Simulări Evaluări Naționale",
   "Ateliere de dezvoltare",
+  "Clubul de după ore",
   "Excursii tematice și tabere",
   "Nu sunt sigur/ă încă",
 ];

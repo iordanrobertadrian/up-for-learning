@@ -27,7 +27,7 @@ export const metadata: Metadata = buildMetadata({
   title: "Programe și ateliere",
   path: ROUTES.programs,
   description:
-    "Meditații și cursuri în Voluntari, Ilfov: Limba română, Matematică, Limba engleză cu pregătire pentru examenele Cambridge, Evaluări Naționale și ateliere de dezvoltare. Clasele I – VIII, 80 lei/oră, 2 ore/sesiune.",
+    "Meditații și cursuri în Voluntari, Ilfov: Limba română, Matematică, Limba engleză cu pregătire Cambridge, Limba germană și Limba franceză (clasele P – XII), Evaluări Naționale, simulări cu feedback individual, ateliere de dezvoltare și Clubul de după ore.",
 });
 
 export default function ProgramsPage() {
@@ -97,6 +97,20 @@ export default function ProgramsPage() {
                   <p className="mt-2 text-sm leading-relaxed text-ink-soft">
                     {item.description}
                   </p>
+                  {item.grades || item.price ? (
+                    <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2">
+                      {item.grades ? (
+                        <span className="inline-flex rounded-full bg-sage px-3 py-1 text-xs font-semibold text-brand-700">
+                          {item.grades}
+                        </span>
+                      ) : null}
+                      {item.price ? (
+                        <span className="font-display text-base font-bold text-brand-700">
+                          {item.price}
+                        </span>
+                      ) : null}
+                    </div>
+                  ) : null}
                 </div>
                 <Badge
                   tone={item.accent === "gold" ? "gold" : "sage"}
