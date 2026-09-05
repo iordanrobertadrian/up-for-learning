@@ -264,7 +264,7 @@ export const programHighlights: ProgramHighlight[] = [
     title: "Simulări Evaluări Naționale",
     tags: "Condiții de examen · Corectare pe barem",
     description:
-      "Simulare completă, corectată după barem, urmată de feedback individual pentru fiecare părinte: unde stă copilul acum și ce urmează de lucrat.",
+      "Simulare completă, corectată după barem, urmată de feedback individual pentru fiecare părinte.",
     badge: "Feedback individual",
     icon: FileCheck,
     accent: "gold",
@@ -354,7 +354,7 @@ export const team: TeamMember[] = [
     role: "Profesor învățământ primar · 23 de ani de experiență",
     image: "/images/team/mihaela-mitrut.jpg",
     description:
-      "Douăzeci și trei de ani la catedră au învățat-o că fiecare copil pornește din alt punct și ajunge departe în ritmul lui. Crede într-o educație centrată pe copil, în care răbdarea, încurajarea și încrederea îl ajută să își descopere și să își valorifice propriul potențial.",
+      "Crede într-o educație centrată pe copil, în care răbdarea, încurajarea și încrederea îl ajută să își descopere și să își valorifice propriul potențial.",
   },
   {
     slug: "andreea-fundeanu",
@@ -370,7 +370,7 @@ export const team: TeamMember[] = [
     role: "Profesor de limba și literatura română",
     image: "/images/team/alexandra-tudor.jpg",
     description:
-      "Pregătește elevi de gimnaziu și de liceu, cu metode interactive și activități adaptate la ritmul, nivelul și nevoile fiecăruia. Textul devine, la ea la oră, un teren de explorat, nu o lecție de memorat.",
+      "Are experiență în pregătirea elevilor de nivel gimnazial și liceal. Aplică metode interactive și adaptează activitățile la ritmul, nivelul și nevoile fiecărui elev.",
   },
   {
     slug: "ashley-justice",
@@ -394,7 +394,7 @@ export const team: TeamMember[] = [
     role: "Profesor de limba și literatura română",
     image: "/images/team/aneliz-craciun.jpg",
     description:
-      "Pregătește elevi de gimnaziu și de liceu, organizează simulări pentru Evaluarea Națională și oferă feedback individual părinților, ca fiecare familie să știe exact unde se află copilul și ce urmează.",
+      "Are experiență în pregătirea elevilor de nivel gimnazial și liceal. Organizează simulări pentru Evaluarea Națională și oferă feedback individual părinților.",
   },
   {
     slug: "stefania-petcu",
