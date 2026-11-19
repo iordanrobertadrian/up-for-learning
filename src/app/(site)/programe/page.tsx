@@ -1,4 +1,4 @@
-import { CalendarCheck, PartyPopper, Plus } from "lucide-react";
+import { CalendarCheck, Percent, Plus } from "lucide-react";
 import type { Metadata } from "next";
 
 import { CourseCard } from "@/components/cards/course-card";
@@ -15,8 +15,8 @@ import { Section } from "@/components/ui/section";
 import { Blob, DotGrid } from "@/components/ui/decorations";
 import { ROUTES } from "@/constants/navigation";
 import {
+  courseDiscounts,
   courses,
-  enrollmentPromo,
   programFeatures,
   programHighlights,
   programsClosing,
@@ -28,7 +28,7 @@ export const metadata: Metadata = buildMetadata({
   title: "Programe și ateliere",
   path: ROUTES.programs,
   description:
-    "Înscrieri deschise în Voluntari, Ilfov: Limba română, Matematică, Clubul de după ore, Limba engleză cu pregătire Cambridge, Limba germană și Limba franceză (clasele P – XII), Evaluări Naționale, simulări cu feedback individual și ateliere de dezvoltare.",
+    "Cursuri în Voluntari, Ilfov: Limba română, Matematică, Clubul de după ore, Limba engleză cu pregătire Cambridge, Limba germană și Limba franceză (clasele P – XII), Evaluări Naționale, simulări cu feedback individual și ateliere de dezvoltare.",
 });
 
 export default function ProgramsPage() {
@@ -70,54 +70,54 @@ export default function ProgramsPage() {
       </section>
 
       <Section tone="cream" size="wide" className="pt-14">
-        <Reveal className="relative mb-12 overflow-hidden rounded-3xl bg-brand-700 p-8 shadow-lift sm:p-10">
-          <span
-            aria-hidden="true"
-            className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-gold-400/15 blur-3xl"
-          />
-          <div className="relative grid gap-9 lg:grid-cols-2 lg:items-center lg:gap-12">
-            <div>
-              <Badge tone="gold">
-                <PartyPopper className="h-3.5 w-3.5" aria-hidden="true" />
-                {enrollmentPromo.badge}
-              </Badge>
-              <h2 className="mt-4 font-display text-3xl font-bold uppercase leading-tight tracking-tight text-cream sm:text-4xl">
-                {enrollmentPromo.title}
+        <Reveal className="mb-12 rounded-3xl bg-brand-700 p-5 shadow-lift sm:p-6">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-center gap-3.5">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold-400 text-brand-900">
+                <Percent className="h-4 w-4" aria-hidden="true" />
+              </span>
+              <h2 className="font-display text-xl font-bold text-cream sm:text-2xl">
+                {courseDiscounts.title}
               </h2>
-              <p className="mt-4 text-base leading-relaxed text-cream/85 sm:text-lg">
-                {enrollmentPromo.subtitle}
-              </p>
-              <Button
-                href={ROUTES.enroll}
-                variant="gold"
-                size="lg"
-                className="mt-7"
-              >
-                <CalendarCheck className="h-5 w-5" aria-hidden="true" />
-                {enrollmentPromo.cta}
-              </Button>
             </div>
+            <p className="inline-flex items-center gap-1.5 self-start rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-gold-200 ring-1 ring-white/15 sm:self-auto">
+              <Plus className="h-3 w-3" aria-hidden="true" />
+              {courseDiscounts.note}
+            </p>
+          </div>
 
-            <ul className="space-y-4">
-              {enrollmentPromo.discounts.map((discount) => (
-                <li
-                  key={discount.value}
-                  className="flex items-center gap-5 rounded-2xl bg-white/[0.07] p-5 ring-1 ring-white/15"
-                >
-                  <span className="font-display text-3xl font-bold text-gold-300 sm:text-4xl">
+          <ul className="mt-4 grid gap-3 md:grid-cols-2 md:gap-4">
+            {courseDiscounts.discounts.map((discount) => (
+              <li
+                key={discount.value}
+                className="flex min-h-[76px] overflow-hidden rounded-2xl bg-cream shadow-soft"
+              >
+                <div className="flex w-20 shrink-0 flex-col items-center justify-center bg-gold-400 text-brand-900 sm:w-24">
+                  <span className="font-display text-2xl font-bold leading-none sm:text-3xl">
                     {discount.value}
                   </span>
-                  <span className="text-sm leading-relaxed text-cream/90 sm:text-base">
-                    {discount.description}
+                  <span className="mt-1 text-[0.55rem] font-bold uppercase tracking-[0.2em]">
+                    reducere
                   </span>
-                </li>
-              ))}
-              <li className="flex items-center gap-2 pl-1 text-sm font-semibold text-gold-200">
-                <Plus className="h-4 w-4" aria-hidden="true" />
-                {enrollmentPromo.note}
+                </div>
+                {/* Linia punctată și decupajele (în culoarea fundalului)
+                    dau aspectul de cupon. */}
+                <div className="relative flex flex-1 items-center border-l-2 border-dashed border-brand-700/25 px-4 py-3 sm:px-5">
+                  <span
+                    aria-hidden="true"
+                    className="absolute -left-[9px] -top-2 h-4 w-4 rounded-full bg-brand-700"
+                  />
+                  <span
+                    aria-hidden="true"
+                    className="absolute -bottom-2 -left-[9px] h-4 w-4 rounded-full bg-brand-700"
+                  />
+                  <p className="text-sm font-semibold leading-snug text-ink sm:text-[0.95rem]">
+                    {discount.description}
+                  </p>
+                </div>
               </li>
-            </ul>
-          </div>
+            ))}
+          </ul>
         </Reveal>
 
         <StaggerGroup className="grid gap-7 sm:grid-cols-2 xl:grid-cols-4">

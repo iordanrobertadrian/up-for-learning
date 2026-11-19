@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 
+import { CampSpotlight } from "@/components/sections/camp-spotlight";
 import { Gallery } from "@/components/sections/gallery";
 import { Hero } from "@/components/sections/hero";
 import { HighlightsSection } from "@/components/sections/highlights";
 import { ProcessSection } from "@/components/sections/process";
+import { featuredCamp } from "@/constants/content";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -16,6 +18,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <CampSpotlight camp={featuredCamp} />
       <ProcessSection />
       <HighlightsSection />
       <Gallery />
