@@ -97,3 +97,45 @@ export interface GalleryImage {
   src: string;
   alt: string;
 }
+
+export interface GalleryVideo {
+  src: string;
+  /** Cadru static afișat până la apăsarea pe play. */
+  poster: string;
+  title: string;
+}
+
+export interface ImageCredit {
+  author: string;
+  license: string;
+  licenseUrl: string;
+  sourceUrl: string;
+}
+
+export interface FeaturedCamp {
+  slug: string;
+  badge: string;
+  title: string;
+  location: string;
+  dates: string;
+  /** Format ISO pentru datele structurate (schema.org/Event). */
+  startDate: string;
+  endDate: string;
+  ages: string;
+  description: string;
+  includes: string[];
+  excludes: string[];
+  activities: string;
+  transport: string[];
+  price: {
+    amount: number;
+    currency: string;
+    /** Preț deja formatat pentru afișare. */
+    label: string;
+    unit: string;
+    covers: string;
+    deposit: string;
+    installments: string;
+  };
+  images: Array<GalleryImage & { credit: ImageCredit }>;
+}

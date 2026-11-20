@@ -20,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: ROUTES.terms, priority: 0.3, changeFrequency: "yearly" },
   ];
 
-  const lastModified = new Date("2026-07-27");
+  const lastModified = new Date("2026-11-19");
 
   return routes.map((route) => ({
     url: absoluteUrl(route.path),

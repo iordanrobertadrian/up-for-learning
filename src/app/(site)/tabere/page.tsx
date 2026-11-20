@@ -3,11 +3,17 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion/reveal";
-import { JsonLd, breadcrumbSchema } from "@/components/seo/json-ld";
+import {
+  JsonLd,
+  breadcrumbSchema,
+  campEventSchema,
+} from "@/components/seo/json-ld";
+import { FeaturedCampSection } from "@/components/sections/featured-camp";
 import { Section } from "@/components/ui/section";
 import { ROUTES } from "@/constants/navigation";
 import {
   educationalCamps,
+  featuredCamp,
   thematicTrips,
   tripsClosing,
   tripsIntro,
@@ -20,7 +26,7 @@ export const metadata: Metadata = buildMetadata({
   title: "Excursii tematice și tabere",
   path: ROUTES.trips,
   description:
-    "Excursii tematice și tabere educaționale Up for Learning. Învățăm dincolo de clasă, prin aventură, curiozitate și prietenie: natură, cultură, știință și creativitate.",
+    "Tabără internațională de limba engleză la Wellington College, UK (8 – 15 august 2027, 11 – 17 ani), excursii tematice și tabere educaționale Up for Learning. Învățăm dincolo de clasă, prin aventură, curiozitate și prietenie: natură, cultură, știință și creativitate.",
 });
 
 export default function TripsPage() {
@@ -32,6 +38,7 @@ export default function TripsPage() {
           { name: "Excursii tematice și tabere", path: ROUTES.trips },
         ])}
       />
+      <JsonLd data={campEventSchema(featuredCamp)} />
 
       <section className="overflow-hidden bg-[#f9f8f2] pb-6 pt-12 sm:pt-16">
         <div className="mx-auto grid w-full max-w-[1320px] items-center gap-8 px-5 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8">
@@ -62,6 +69,8 @@ export default function TripsPage() {
           </Reveal>
         </div>
       </section>
+
+      <FeaturedCampSection camp={featuredCamp} />
 
       <Section tone="cream" size="wide" className="pt-12">
         <SectionLabel icon={BookOpen} tone="brand">

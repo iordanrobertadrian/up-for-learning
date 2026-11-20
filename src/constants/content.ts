@@ -31,7 +31,9 @@ import type {
   Course,
   CoursePrice,
   FeatureItem,
+  FeaturedCamp,
   GalleryImage,
+  GalleryVideo,
   ProcessStep,
   ProgramHighlight,
   TeamMember,
@@ -51,11 +53,6 @@ const clubPrice: CoursePrice = {
   unit: "zi",
   note: "2 ore/zi",
 };
-
-export const comingSoon = {
-  label: "Coming soon",
-  text: "Ne deschidem porțile în curând, în Voluntari. Înscrierile sunt deja deschise.",
-} as const;
 
 export const heroCopy = {
   eyebrow: "Fiecare progres solid începe cu o bază construită corect.",
@@ -129,48 +126,51 @@ export const galleryIntro = {
     "Învățarea se vede cel mai frumos în momentele în care copiii întreabă, descoperă, creează și capătă curaj să meargă mai departe.",
 } as const;
 
-export const galleryImages: GalleryImage[] = [
+export const galleryVideos: GalleryVideo[] = [
   {
-    src: "/images/gallery/home-1-v2.jpg",
-    alt: "Doi copii scriind împreună la o lecție Up for Learning",
+    src: "/videos/prezentare-up-for-learning.mp4",
+    poster: "/videos/prezentare-up-for-learning.jpg",
+    title: "Prezentare Up for Learning",
   },
   {
-    src: "/images/gallery/home-2-v2.jpg",
-    alt: "Elevă citind o carte într-un atelier de lectură",
+    src: "/videos/activitati-limba-engleza.mp4",
+    poster: "/videos/activitati-limba-engleza.jpg",
+    title: "Limba engleză, prin joc",
   },
   {
-    src: "/images/gallery/home-3-v2.jpg",
-    alt: "Copii lucrând împreună la o activitate",
+    src: "/videos/activitati-clasele-primare.mp4",
+    poster: "/videos/activitati-clasele-primare.jpg",
+    title: "La clasele primare",
   },
   {
-    src: "/images/gallery/home-4-v2.jpg",
-    alt: "Copii într-o excursie educațională în natură",
+    src: "/videos/activitati-lucru-in-echipa.mp4",
+    poster: "/videos/activitati-lucru-in-echipa.jpg",
+    title: "Lucru în echipă",
   },
 ];
+
+export const halloweenGallery: { title: string; images: GalleryImage[] } = {
+  title: "Halloween la Up for Learning",
+  images: [
+    {
+      src: "/images/gallery/halloween-costume.jpg",
+      alt: "Copii costumați în vrăjitoare, dragon, Batman și pisică, jucându-se cu un dovleac de pluș",
+    },
+    {
+      src: "/images/gallery/halloween-poveste.jpg",
+      alt: "Profesoară costumată citind copiilor povestea „Room on the Broom”",
+    },
+    {
+      src: "/images/gallery/halloween-diplome.jpg",
+      alt: "Copii în costume de Halloween, cu diplomele de participare, alături de profesori",
+    },
+  ],
+};
 
 export const programsIntro = {
   title: "Programe",
   subtitle:
     "Programe educaționale structurate, construite pentru progres, rigoare și rezultate vizibile.",
-} as const;
-
-export const enrollmentPromo = {
-  badge: "Înscrieri deschise",
-  title: "Am deschis înscrierile!",
-  subtitle: "Rezervă un loc și beneficiază de reducerile noastre:",
-  discounts: [
-    {
-      value: "5%",
-      description: "reducere dacă alegi două programe Up for Learning",
-    },
-    {
-      value: "10%",
-      description:
-        "reducere la plata integrală a cursului pentru tot anul academic",
-    },
-  ],
-  note: "Reducerile se cumulează.",
-  cta: "Rezervă un loc",
 } as const;
 
 export const courses: Course[] = [
@@ -282,6 +282,22 @@ export const programHighlights: ProgramHighlight[] = [
     accent: "brand",
   },
 ];
+
+export const courseDiscounts = {
+  title: "Reduceri la cursuri",
+  discounts: [
+    {
+      value: "5%",
+      description: "Când alegi două programe Up for Learning",
+    },
+    {
+      value: "10%",
+      description:
+        "La plata integrală a cursului pentru tot anul academic",
+    },
+  ],
+  note: "Reducerile se cumulează.",
+} as const;
 
 export const programFeatures: FeatureItem[] = [
   {
@@ -414,6 +430,84 @@ export const team: TeamMember[] = [
   },
 ];
 
+export const featuredCamp: FeaturedCamp = {
+  slug: "tabara-engleza-wellington-college",
+  badge: "Tabără internațională",
+  title: "Tabără Internațională de limba engleză",
+  location: "Wellington College, Berkshire, UK",
+  dates: "8 – 15 august 2027",
+  startDate: "2027-08-08",
+  endDate: "2027-08-15",
+  ages: "11 – 17 ani",
+  description:
+    "O vară într-un prestigios colegiu britanic, cu spații verzi generoase și facilități sportive excelente. La Wellington College, cursurile interactive de engleză se îmbină cu viața de campus, prietenii internaționale și excursii la obiective emblematice din Anglia.",
+  includes: [
+    "Cazare în camere individuale standard, în reședințele tradiționale ale colegiului.",
+    "Pensiune completă: mic dejun, prânz și cină.",
+    "15 ore de engleză pe săptămână, materiale de curs și certificat la finalul programului.",
+    "2 excursii de o zi și o excursie de jumătate de zi.",
+    "5 activități în campus și transport local pentru program.",
+    "Transfer aeroport dus – întors și întâmpinare la sosire.",
+  ],
+  excludes: [
+    "Biletul de avion dus – întors",
+    "Asigurarea de călătorie",
+    "Cheltuielile personale",
+    "Excursiile opționale",
+    "Eventualele taxe pentru documentele de călătorie necesare",
+  ],
+  activities:
+    "Programul poate include tenis, baschet, înot, fotbal, badminton, volei, jocuri de echipă, ateliere de fotografie și teatru, seri internaționale, quiz, karaoke, disco și seri de film. Activitățile se stabilesc de echipa centrului.",
+  transport: [
+    "Participanții sunt întâmpinați la aeroport. Transfer orientativ: aproximativ 30 de minute de la Heathrow sau o oră de la Gatwick.",
+    "Transportul necesar programului este inclus. Deplasări orientative cu trenul: Reading 15 minute, Guildford 30 de minute și Londra 50 de minute. Excursiile se realizează cu trenul sau autocarul, potrivit programului.",
+  ],
+  price: {
+    amount: 1200,
+    currency: "GBP",
+    label: "1.200 GBP",
+    unit: "pachet 7 nopți",
+    covers: "cazare, masă, activități și excursiile menționate",
+    deposit: "Avans 200 GBP",
+    installments: "Plata în 3 tranșe",
+  },
+  images: [
+    {
+      src: "/images/trips/wellington/campus.jpg",
+      alt: "Clădirea principală a Wellington College, cu gazonul din fața colegiului",
+      credit: {
+        author: "Lewis Hulbert",
+        license: "CC BY-SA 3.0",
+        licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+        sourceUrl:
+          "https://commons.wikimedia.org/wiki/File:Wellington_College_front_01.jpg",
+      },
+    },
+    {
+      src: "/images/trips/wellington/south-front.jpg",
+      alt: "Fațada de sud a Wellington College și spațiile verzi ale campusului",
+      credit: {
+        author: "Graeme Kennedy",
+        license: "CC BY-SA 3.0",
+        licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+        sourceUrl:
+          "https://commons.wikimedia.org/wiki/File:Wellington_College%2C_South_Front.jpg",
+      },
+    },
+    {
+      src: "/images/trips/wellington/capela.jpg",
+      alt: "Capela Wellington College, în lumina după-amiezii",
+      credit: {
+        author: "Graeme Kennedy",
+        license: "CC BY-SA 3.0",
+        licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+        sourceUrl:
+          "https://commons.wikimedia.org/wiki/File:Wellington_College%2C_Chapel.jpg",
+      },
+    },
+  ],
+};
+
 export const tripsIntro = {
   title: "Excursii tematice și tabere educaționale",
   subtitle:
@@ -488,5 +582,6 @@ export const courseOptions: string[] = [
   "Simulări Evaluări Naționale",
   "Ateliere de dezvoltare",
   "Excursii tematice și tabere",
+  "Tabăra de engleză Wellington College (UK)",
   "Nu sunt sigur/ă încă",
 ];

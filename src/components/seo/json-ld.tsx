@@ -1,6 +1,6 @@
 import { absoluteUrl, siteConfig } from "@/config/site";
 import { ROUTES } from "@/constants/navigation";
-import type { CoursePrice } from "@/types";
+import type { CoursePrice, FeaturedCamp } from "@/types";
 
 export function JsonLd({ data }: { data: Record<string, unknown> }) {
   return (
@@ -160,5 +160,40 @@ export function courseSchema(course: {
         address: postalAddress(),
       },
     },
+  };
+}
+
+export function campEventSchema(camp: FeaturedCamp): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: `${camp.title} – ${camp.location}`,
+    description: camp.description,
+    startDate: camp.startDate,
+    endDate: camp.endDate,
+    eventStatus: "https://schema.org/EventScheduled",
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    inLanguage: "en",
+    image: camp.images.map((image) => absoluteUrl(image.src)),
+    typicalAgeRange: "11-17",
+    location: {
+      "@type": "Place",
+      name: "Wellington College",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Crowthorne",
+        addressRegion: "Berkshire",
+        addressCountry: "GB",
+      },
+    },
+    organizer: { "@id": ORGANIZATION_ID },
+    offers: {
+      "@type": "Offer",
+      price: camp.price.amount,
+      priceCurrency: camp.price.currency,
+      availability: "https://schema.org/InStock",
+      url: absoluteUrl(ROUTES.enroll),
+    },
+    url: absoluteUrl(`${ROUTES.trips}#${camp.slug}`),
   };
 }
