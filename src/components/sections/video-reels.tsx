@@ -172,10 +172,7 @@ function ReelCard({
       </AnimatePresence>
 
       <span className="absolute inset-x-4 bottom-4 text-left">
-        <span className="block font-display text-lg font-bold leading-tight text-white drop-shadow">
-          {video.title}
-        </span>
-        <span className="mt-2.5 inline-flex items-center gap-1.5 rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white ring-1 ring-white/30 backdrop-blur-md transition-colors group-hover/card:bg-white group-hover/card:text-brand-800">
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white ring-1 ring-white/30 backdrop-blur-md transition-colors group-hover/card:bg-white group-hover/card:text-brand-800">
           <Volume2 className="h-3.5 w-3.5" aria-hidden="true" />
           Vezi cu sunet
         </span>
@@ -427,9 +424,6 @@ function StoryViewer({
           ) : null}
         </AnimatePresence>
 
-        <p className="pointer-events-none absolute inset-x-5 bottom-6 font-display text-2xl font-bold text-white drop-shadow">
-          {video.title}
-        </p>
       </motion.div>
 
       <NavButton

@@ -126,7 +126,13 @@ export const galleryIntro = {
     "Învățarea se vede cel mai frumos în momentele în care copiii întreabă, descoperă, creează și capătă curaj să meargă mai departe.",
 } as const;
 
+// Titlurile nu se afișează (cerința clientului); rămân doar pentru cititoarele de ecran.
 export const galleryVideos: GalleryVideo[] = [
+  {
+    src: "/videos/activitati-lucru-in-echipa.mp4",
+    poster: "/videos/activitati-lucru-in-echipa.jpg",
+    title: "Copiii intră în clasă",
+  },
   {
     src: "/videos/prezentare-up-for-learning.mp4",
     poster: "/videos/prezentare-up-for-learning.jpg",
@@ -141,11 +147,6 @@ export const galleryVideos: GalleryVideo[] = [
     src: "/videos/activitati-clasele-primare.mp4",
     poster: "/videos/activitati-clasele-primare.jpg",
     title: "La clasele primare",
-  },
-  {
-    src: "/videos/activitati-lucru-in-echipa.mp4",
-    poster: "/videos/activitati-lucru-in-echipa.jpg",
-    title: "Lucru în echipă",
   },
 ];
 
