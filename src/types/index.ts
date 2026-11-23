@@ -105,6 +105,14 @@ export interface GalleryVideo {
   title: string;
 }
 
+export interface GalleryCategory {
+  id: string;
+  label: string;
+  icon: "activities" | "halloween" | "christmas";
+  videos: GalleryVideo[];
+  images: GalleryImage[];
+}
+
 export interface ImageCredit {
   author: string;
   license: string;

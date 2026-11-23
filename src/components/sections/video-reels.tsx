@@ -29,17 +29,35 @@ type NavigatorWithConnection = Navigator & {
  * doar cât sunt pe ecran. Click pe unul deschide vizualizarea tip stories,
  * cu sunet, bare de progres și trecere automată la următorul clip.
  */
-export function VideoReels({ videos }: { videos: GalleryVideo[] }) {
+export function VideoReels({
+  videos,
+  layout = "wall",
+}: {
+  videos: GalleryVideo[];
+  /** „wall”: carusel pe mobil, grilă de 4 pe desktop. „single”: un clip pe toată lățimea coloanei. */
+  layout?: "wall" | "single";
+}) {
   const reduceMotion = useReducedMotion();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <>
-      <div className="group/reels -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-5 sm:overflow-visible sm:px-0 lg:grid-cols-4 lg:gap-6 [&::-webkit-scrollbar]:hidden">
+      <div
+        className={cn(
+          "group/reels",
+          layout === "wall"
+            ? "-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-5 sm:overflow-visible sm:px-0 lg:grid-cols-4 lg:gap-6 [&::-webkit-scrollbar]:hidden"
+            : "flex flex-col items-center gap-4",
+        )}
+      >
         {videos.map((video, index) => (
           <div
             key={video.src}
-            className="w-[64%] shrink-0 snap-center sm:w-auto"
+            className={
+              layout === "wall"
+                ? "w-[64%] shrink-0 snap-center sm:w-auto"
+                : "w-full max-w-[300px] sm:max-w-[340px] lg:max-w-none"
+            }
           >
             <ReelCard
               video={video}
