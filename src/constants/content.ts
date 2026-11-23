@@ -32,8 +32,7 @@ import type {
   CoursePrice,
   FeatureItem,
   FeaturedCamp,
-  GalleryImage,
-  GalleryVideo,
+  GalleryCategory,
   ProcessStep,
   ProgramHighlight,
   TeamMember,
@@ -126,47 +125,68 @@ export const galleryIntro = {
     "Învățarea se vede cel mai frumos în momentele în care copiii întreabă, descoperă, creează și capătă curaj să meargă mai departe.",
 } as const;
 
-// Titlurile nu se afișează (cerința clientului); rămân doar pentru cititoarele de ecran.
-export const galleryVideos: GalleryVideo[] = [
+/**
+ * Galeria de pe prima pagină, organizată pe categorii (taburi). Pentru un
+ * eveniment nou (de ex. Crăciun) se adaugă o categorie aici; taburile fără
+ * conținut nu se afișează. Titlurile clipurilor nu se afișează (cerința
+ * clientului); rămân doar pentru cititoarele de ecran.
+ */
+export const galleryCategories: GalleryCategory[] = [
   {
-    src: "/videos/activitati-lucru-in-echipa.mp4",
-    poster: "/videos/activitati-lucru-in-echipa.jpg",
-    title: "Copiii intră în clasă",
+    id: "activitati",
+    label: "Activități",
+    icon: "activities",
+    videos: [
+      {
+        src: "/videos/activitati-lucru-in-echipa.mp4",
+        poster: "/videos/activitati-lucru-in-echipa.jpg",
+        title: "Copiii intră în clasă",
+      },
+      {
+        src: "/videos/prezentare-up-for-learning.mp4",
+        poster: "/videos/prezentare-up-for-learning.jpg",
+        title: "Prezentare Up for Learning",
+      },
+      {
+        src: "/videos/activitati-limba-engleza.mp4",
+        poster: "/videos/activitati-limba-engleza.jpg",
+        title: "Limba engleză, prin joc",
+      },
+      {
+        src: "/videos/activitati-clasele-primare.mp4",
+        poster: "/videos/activitati-clasele-primare.jpg",
+        title: "La clasele primare",
+      },
+    ],
+    images: [],
   },
   {
-    src: "/videos/prezentare-up-for-learning.mp4",
-    poster: "/videos/prezentare-up-for-learning.jpg",
-    title: "Prezentare Up for Learning",
-  },
-  {
-    src: "/videos/activitati-limba-engleza.mp4",
-    poster: "/videos/activitati-limba-engleza.jpg",
-    title: "Limba engleză, prin joc",
-  },
-  {
-    src: "/videos/activitati-clasele-primare.mp4",
-    poster: "/videos/activitati-clasele-primare.jpg",
-    title: "La clasele primare",
+    id: "halloween",
+    label: "Halloween",
+    icon: "halloween",
+    videos: [
+      {
+        src: "/videos/halloween-up-for-learning.mp4",
+        poster: "/videos/halloween-up-for-learning.jpg",
+        title: "Halloween la Up for Learning",
+      },
+    ],
+    images: [
+      {
+        src: "/images/gallery/halloween-costume.jpg",
+        alt: "Copii costumați în vrăjitoare, dragon, Batman și pisică, jucându-se cu un dovleac de pluș",
+      },
+      {
+        src: "/images/gallery/halloween-poveste.jpg",
+        alt: "Profesoară costumată citind copiilor povestea „Room on the Broom”",
+      },
+      {
+        src: "/images/gallery/halloween-diplome.jpg",
+        alt: "Copii în costume de Halloween, cu diplomele de participare, alături de profesori",
+      },
+    ],
   },
 ];
-
-export const halloweenGallery: { title: string; images: GalleryImage[] } = {
-  title: "Halloween la Up for Learning",
-  images: [
-    {
-      src: "/images/gallery/halloween-costume.jpg",
-      alt: "Copii costumați în vrăjitoare, dragon, Batman și pisică, jucându-se cu un dovleac de pluș",
-    },
-    {
-      src: "/images/gallery/halloween-poveste.jpg",
-      alt: "Profesoară costumată citind copiilor povestea „Room on the Broom”",
-    },
-    {
-      src: "/images/gallery/halloween-diplome.jpg",
-      alt: "Copii în costume de Halloween, cu diplomele de participare, alături de profesori",
-    },
-  ],
-};
 
 export const programsIntro = {
   title: "Programe",
